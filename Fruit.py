@@ -7,12 +7,14 @@ class Fruit:
         self.cell_size = cell_size
         self.cell_number = cell_number
         self.randomize()
+        self.apple = pygame.image.load('Graphics/apple.png').convert_alpha()
         
     def draw(self):
         x = int(self.pos.x * self.cell_size)
         y = int(self.pos.y * self.cell_size)
         fruit_rect = pygame.Rect( x,y, self.cell_size, self.cell_size)
-        pygame.draw.rect(self.screen, (126, 166, 114), fruit_rect)
+        self.screen.blit(self.apple, fruit_rect)
+        # pygame.draw.rect(self.screen, (126, 166, 114), fruit_rect)
 
     def randomize(self):
         self.x = random.randint(0, self.cell_number - 1)

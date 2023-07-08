@@ -4,7 +4,7 @@ from Snake import Snake
 from Game import Game
 
 pygame.init()
-cell_size = 35
+cell_size = 40
 cell_number = 20
 width = cell_number * cell_size
 height = cell_number * cell_size
@@ -12,7 +12,7 @@ screen = pygame.display.set_mode((width,height))
 clock = pygame.time.Clock()
 
 SCREEN_UPDATE = pygame.USEREVENT
-pygame.time.set_timer(SCREEN_UPDATE, 90)
+pygame.time.set_timer(SCREEN_UPDATE, 130)
 
 game = Game(screen, cell_size, cell_number)
 
@@ -29,7 +29,7 @@ while True:
             if event.key == pygame.K_DOWN: 
                 if game.snake.direction.y != -1: game.snake.move_down()
             if event.key == pygame.K_LEFT: 
-                if game.snake.direction.x != -1: game.snake.move_left()
+                if game.snake.direction.x != 1: game.snake.move_left()
             if event.key == pygame.K_RIGHT: 
                 if game.snake.direction.x != -1: game.snake.move_right()
 
